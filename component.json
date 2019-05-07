@@ -1,0 +1,51 @@
+{
+    "title": "Synonym APIs",
+    "description": "Return synonymous words. (equal to \"word2vec distance\")<BR />[Endpoint] https://api.apitore.com/api/9",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/apitore.com/synonymApis/1.0.1/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://api.apitore.com/api/9",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "distanceUsingGET": {
+            "main": "./lib/actions/distanceUsingGET.js",
+            "title": "Word2Vec distance",
+            "description": "Word2Vec JaWikipedia 2016-9-15 dump.<BR />Response<BR />&nbsp; Github: <a href=\"https://github.com/keigohtr/apitore-response-parent/tree/master/word2vec-response\">word2vec-response</a><BR />&nbsp; Class: com.apitore.banana.response.word2vec.DistanceResponseEntity<BR />",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/distanceUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

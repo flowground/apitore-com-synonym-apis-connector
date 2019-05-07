@@ -1,0 +1,15 @@
+{
+    "name": "apitore-com-synonym-apis-connector",
+    "version": "1.0.1",
+    "description": "Return synonymous words. (equal to \"word2vec distance\")<BR />[Endpoint] https://api.apitore.com/api/9",
+    "main": "component.json",
+    "dependencies": {
+        "elasticio-node": "0.0.9",
+        "elasticio-sailor-nodejs": "^2.2.1",
+        "swagger-client": "^3.8.22"
+    },
+    "author": {
+        "name": "Deutsche Telekom AG"
+    },
+    "license": "Apache-2.0"
+}
